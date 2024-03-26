@@ -23,11 +23,11 @@
               <h1>Faça seu login</h1>
               <h5>Informe seus dados para continuar</h5>
 <br><br>
-                <form action="#">
+                <form action="/login" method="post">
 
                     <div class="input-box">
                       <span class="email">Email</span>
-                        <input class="" type="email"placeholder="Digite seu email" required>
+                        <input type="email" name="email" placeholder="Digite seu email" required>
                         <label for="email"></label>
 
                     </div>
@@ -38,7 +38,7 @@
                         <label for="senha"></label>
                     </div>
 
-                    <button type="submit" class="btn"><a href="reservas-adm.html">Login</a></button>
+                    <button type="submit" class="btn">Login</button>
                     <div class="registrar-login"></div>
                 </form>
           </div>
@@ -46,7 +46,5 @@
 </main>
 
 <footer><p>Todos os direitos reservados. Copyright 2024/ Afya</p></footer>
-
-  <script type="text/javascript" src="script.js"></script>
 
 </body>

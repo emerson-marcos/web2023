@@ -96,7 +96,7 @@ nav a {
     border-radius: 20px;
     box-shadow: 0 0 1px black; 
     border: none;
-    background-image: url(assets/estudante.png);
+    background-image: url(../assets/estudante.png);
     background-position: 50%;
     background-size: cover;
     cursor: pointer;
@@ -146,7 +146,7 @@ nav a {
     border-radius: 20px;
     box-shadow: 0 0 1px black; 
     border: none;
-    background-image: url(assets/administrador-img.png);
+    background-image: url(../assets/administrador-img.png);
     background-position: 50%;
     background-size: cover;
     cursor: pointer;

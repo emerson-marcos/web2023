@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/emerson-marcos/web2023/issues"
   },
-  "homepage": "https://github.com/emerson-marcos/web2023#readme"
+  "homepage": "https://github.com/emerson-marcos/web2023#readme",
+  "devDependencies": {
+    "mysql2": "^3.9.2"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-handlebars": "^7.1.2",
+    "express-session": "^1.18.0"
+  }
 }

@@ -157,17 +157,7 @@ h1{
         left: 0;
         margin-left: 0vw;
     }
-
-    .filtro-label {
-        position: fixed; /* Tornar a label fixa */
-        top: 125px; /* Definir a distância do topo */
-        left: 10px; /* Definir a distância da esquerda */
-        z-index: 999; /* Certificar-se de que a label esteja acima de outros elementos */
-        color: #999;
-        font-size: 14px;
-        font-style: italic;
-        pointer-events: none;
-    }
+    
     
 
     .filtro{
@@ -175,6 +165,7 @@ h1{
         top: 140px; /* Definir a distância do topo */
         left: 10px; /* Definir a distância da esquerda */
         z-index: 999; /* Certificar-se de que a label esteja acima de outros elementos */
+        vertical-align: middle;
     }
         .floating-page {
             /* Ajuste a posição conforme necessário */
@@ -199,12 +190,12 @@ h1{
 }
 
 .filtro-label {
-    position: absolute;
+    display: inline-block; /* Altere para inline-block para permitir que o elemento ocupe apenas o espaço necessário */
+    vertical-align: middle; /* Alinhar verticalmente com o menu suspenso */
+    margin-right: 10px; /* Adicione margem à direita para separar do menu suspenso */
     color: #999;
     font-size: 14px;
     font-style: italic;
-    margin-top: 12px;
-    margin-left: 5px;
     pointer-events: none;
 }
 

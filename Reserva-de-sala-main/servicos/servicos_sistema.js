@@ -8,20 +8,20 @@ const crypto = require('crypto');
 
 // Função para exibir o formulário para cadastro de produtos
 function paginaPrincipal(req, res){
-    res.render('index');
+    res.render('index', { layout: 'main' });
 }
 
 function adminLogin(req,res) {
-    res.render('adminLogin');
+    res.render('adminLogin', { layout: 'login' });
 }
 
 function reservasAdm(req,res) {
-    res.render('reservasAdm');
+    res.render('reservasAdm', {layout: 'reservas'});
 }
 
 function loginAdmin(req, res, email, senha, err) {
     if (!email || !senha) {
-        return res.render('adminLogin', { erro: 'Por favor, preencha todos os campos.' });
+        return res.render('adminLogin', { layout: 'login' }, { erro: 'Por favor, preencha todos os campos.' });
     }
 
     let sql = `SELECT * FROM admin WHERE email = ? AND senha = ?`;

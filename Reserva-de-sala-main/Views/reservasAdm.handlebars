@@ -22,10 +22,10 @@
             <!-- cabeçalho -->
             <nav id="menu">
        
-                    <a href="/">Início</a>
                     <a href="#"><span class="sala-header">Salas</span></a>
-                    <a href="reservantes-adm.html">Reservantes</a>
+                    <a href="/reservantesAdm">Reservantes</a>
                     <a href="#">Cursos</a>
+                    <a href="/">Sair</a>
                     
                 </nav>        
             </header>
@@ -45,87 +45,46 @@
                 <option value="indisponiveis">Indisponíveis</option>
             </select>
 
-
-            <div class="btn-reserva"
-                ><!-- Adicione o evento de clique diretamente no botão "Adicionar Sala" -->
-                <button class="btn-adicionar" id="btnAdicionarSala"onclick="abrirInputBox(event)">Adicionar Sala</button>
-                
-            </div>
-
         </form>
 
-             <!-- table salas -->
-    <div class="box-salas">
-        <table>
-            <thead>
-                <tr>
-                    <th>Vagas</th>
-                    <th>Sala</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="vagas">50</td>
-                    <td class="sala">Laboratório C</td>
-                    <td>Reservada</td>
-                </tr>
-                <tr>
-                    <td class="vagas">99</td>
-                    <td class="sala">Auditorio 1F</td>
-                    <td class="status">Indisponível</td>
-                </tr>
-                <tr>
-                    <td class="vagas">30</td>
-                    <td class="sala">Sala 303</td>
-                    <td>Disponível</td>
-                </tr>
-                <tr>
-                    <td class="vagas">30</td>
-                    <td class="sala">Sala 101</td>
-                    <td class="status">Reservada</td>
-                </tr>
+       <!-- table salas -->
+<div class="box-salas">
+    <table>
+        <thead>
+            <tr>
+                <th>Sala</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each salas}}
+            <tr>
+                <td class="sala">{{this.Categoria}} {{this.Bloco}}</td>
+                <td>{{this.Status}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
 
-                <tr>
-                    <td class="vagas"></td>
-                    <td class="sala"></td>
-                    <td class="status"></td>
-                </tr>
-                <tr>
-                    <td class="vagas"></td>
-                    <td class="sala"></td>
-                    <td class="status"></td>
-                </tr>
-                <tr>
-                    <td class="vagas"></td>
-                    <td class="sala"></td>
-                    <td class="status"></td>
-                </tr>
-                <!-- Adicione mais linhas conforme necessário -->
-            </tbody>
-        </table>
-    </div>
 
     <div class="input-box" id="inputBox">
-        <span class="icon-close" onclick="fecharInputBox()"><ion-icon name="close-outline"></ion-icon></span>
-        <br>
-
         <div class="container2">
-            <h1>Cadastrar uma sala</h1>
-        
-            <span class="escolha">O que quer adicionar?</span>
-            <select name="sala" id="sala">
-                <option value="lab" class="option-lab" onclick="exibirLabOptions()">Laboratório</option>
-                <option value="salas" class="option-salas">Sala</option>
-                <option value="auditorio" class="option-auditorio">Auditório</option>
-            </select>
-
-            <input class="nome-sala" type="text" placeholder="Digite o nome da sala">
-            <input class="num-sala" type="number" placeholder="Vagas">
-            <button class="btn-cadastrar" id="cadastrar-sala">Cadastrar sala</button>
+            <h1>Cadastrar uma sala</h1><br>
+            <form id="formSala" method="POST" action="/cadastrar-sala">
+                <span class="escolha">O que quer adicionar?</span><br>
+                <select name="categoria" id="salaCategoria">
+                    <option value="Lab" class="option-lab">Laboratório</option>
+                    <option value="Sala" class="option-salas">Sala</option>
+                    <option value="Auditorio" class="option-auditorio">Auditório</option>
+                </select>
+                <input class="nome-sala" type="text" name="descricao" placeholder="Digite o nome da sala">
+                <button type="submit" class="btn-cadastrar" id="cadastrar-sala">Cadastrar sala</button>
+            </form>
         </div>
         <br>
-</div>
+    </div>
+
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

@@ -39,7 +39,7 @@ router.post('/login', (req, res) => {
       }
       if (result.length > 0) {
           req.session.usuario = result[0]; // Definindo o usuário na sessão
-          servico.reservasAdm(req,res); // Redireciona para a página de gerente se as credenciais estiverem corretas
+          servico.reservantesAdm(req,res); // Redireciona para a página de gerente se as credenciais estiverem corretas
       } else {
         console.log("Login Inválido");
           return res.render('adminLogin', {layout: 'login'});
@@ -47,10 +47,39 @@ router.post('/login', (req, res) => {
   });
 });
 
+// Rota para receber os dados do formulário e inseri-los no banco de dados
+router.post('/cadastrar-sala', (req, res) => {
+    const { categoria, descricao } = req.body;
 
-router.get('/reservasAdm', function(req,res) {
-  servico.reservasAdm(req,res);
-})
+    // Chamar a função para inserir sala no banco de dados
+    servico.cadastrarSala(categoria, descricao, (error, results) => {
+        if (error) {
+            res.status(500).send('Erro ao cadastrar a sala');
+        } else {
+            res.status(200).send('Sala cadastrada com sucesso');
+        }
+    });
+});
+
+
+router.get('/reservantesAdm', function(req,res) {
+  servico.reservantesAdm(req,res);
+});
+
+router.get('/reservasAdm', function(req, res) {
+    conexao.query('SELECT * FROM sala', (error, results) => {
+        console.log('Consulta ao banco de dados realizada com sucesso:', results);
+
+        if (error) {
+            console.error('Erro ao buscar as salas:', error);
+            res.status(500).send('Erro ao buscar as salas');
+        } else {
+            // Renderize a página HTML e passe as salas como variável para o template
+            res.render('reservasAdm', { layout: 'reservas', salas: results });
+        }
+    });
+});
+
 
   //rota de login do gerente de TI (mova esta rota para cima)
 router.get('/login', function(req,res) {

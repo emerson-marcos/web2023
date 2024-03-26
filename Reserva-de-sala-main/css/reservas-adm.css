@@ -59,7 +59,7 @@ header #logo {
     width: 80px;
     height: 32px;
     flex: 0 1 100px;
-    margin-top: 15px;
+    margin-top: 25px;
     margin-left: 120px; /* Adicione margem à esquerda */
     margin-right: 10px; /* Adicione margem à direita */
     align-self: center; /* Alinhe verticalmente ao centro */
@@ -178,15 +178,6 @@ h1{
             height: 200vh;
             width: 200px;
         }
-}
-
-.filtro {
-    border:none;
-    background: rgba(240, 240, 240, 0.75);
-    box-sizing: border-box; /* Garantir que a largura e altura incluam a sombra */
-    border-radius: 10px;
-    box-shadow: 0 0 1px black;
-    cursor: pointer;
 }
 
 .filtro-label {
@@ -340,15 +331,18 @@ th {
     background-color: white;
     backdrop-filter: blur(2px);
     width: 300px;
-    height: 270px;
+    height: 250px;
     position: absolute;
-    top: 50%;
     left: 50%; /* Alterado para 50% para centralizar horizontalmente */
     transform: translate(-50%, -50%); /* Adicionado para centralizar verticalmente */
     flex-direction: column;
     align-items: center; /* Adicionado para centralizar os itens na horizontal */
     justify-content: center; /* Adicionado para centralizar os itens na vertical */
-    display: none;
+    display: flex;
+    top: auto;
+    left: 200px;
+    bottom: auto;
+    margin-top: -150px;
 }
 
 .input-box h1 {
@@ -470,8 +464,7 @@ th {
     top: 0px;
     width: 65px !important;
 }
-
-.btn-cadastrar{
+.btn-cadastrar {
     color: white;
     border: none;
     padding: 10px;
@@ -479,10 +472,13 @@ th {
     border-radius: 20px;
     cursor: pointer;
     position: absolute;
-    bottom: -100px;
-    right: 0;
+    bottom: -100px; /* Distância do final */
+    left: 50%; /* Centralizar horizontalmente */
+    transform: translateX(-50%); /* Correção para centralizar */
     font-weight: 600;
 }
+
+
 .btn-cadastrar:hover{
     background-color: rgb(159, 0, 66);
 }

@@ -1,0 +1,360 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    letter-spacing: 1px;
+    font-family: "Sansbeambody Bold", sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+body {
+	display: flex;
+	flex-wrap: wrap;
+    overflow-x: hidden;
+	/* Junção de flex-grow, flex-shrink e flex-basis.  */
+	/* flex-grow – Habilidade de um flex item crescer. */
+	/* flex-shrink - Capacidade de redução do item.    */
+	/* flex-basis – Tamanho inicial do item.           */
+	flex: 1 1 100vw;
+}
+
+.container {
+    position: relative;
+    flex: 1 1 100vw;
+    height: 100vh;
+}
+
+#logo{
+    flex: 1 0 200;
+    align-items: flex-start;
+    justify-content: flex-start;
+    top: 0;
+    left: 0;
+}
+
+.mulher {
+    position: absolute;
+    top: 0px;
+    left: 406px;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.2; /* Opacidade da imagem */
+    z-index: -1; /* Garante que a imagem fique atrás do conteúdo */
+}
+
+header {
+    display: flex;
+	flex: 1 1 100vw;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(2px);
+}
+
+header #logo {
+	display: flex;
+    width: 80px;
+    height: 32px;
+    flex: 0 1 100px;
+    margin-top: 15px;
+    margin-left: 120px; /* Adicione margem à esquerda */
+    margin-right: 10px; /* Adicione margem à direita */
+    align-self: center; /* Alinhe verticalmente ao centro */
+    font-size: 16px;
+    
+}
+
+@media screen and (max-width: 859px) {
+    header #logo {
+        display: none;
+    }
+}
+
+.sala-header{
+    color: rgb(206,0,86);
+    font-weight: 800;
+    font-family: Inter;
+    word-spacing: 2px;
+}
+
+nav {
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1 1 200px;
+}
+
+nav a {
+	margin: 0 3%;
+	font-size: 13pt;
+    font-weight: 500;
+}
+
+h1{
+    margin-top: 20px;
+    margin-left: 150px;
+    color: #292929;
+    text-align: flex-start;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+/* Estilo básico para a barra de pesquisa */
+.search-bar {
+    width: 300px; /* largura da barra de pesquisa */
+    padding: 10px; /* espaço interno */
+    border: 1px solid #ccc; /* borda */
+    border-radius: 20px; /* bordas arredondadas */
+    font-size: 16px; /* tamanho da fonte */
+    left: 0;
+}
+
+/* Estilizando o botão de pesquisa */
+.search-btn {
+    padding: 10px 15px; /* espaço interno */
+    background-color: rgb(206,0,86); /* cor de fundo */
+    color: #fff; /* cor do texto */
+    border: none; /* removendo a borda */
+    border-radius: 20px; /* bordas arredondadas */
+    cursor: pointer; /* cursor ao passar por cima */
+    font-size: 16px; /* tamanho da fonte */
+}
+
+/* Estilizando o botão de pesquisa quando passa o mouse por cima */
+.search-btn:hover {
+    background-color: rgb(159, 0, 66); /* cor de fundo ao passar o mouse */
+}
+
+/* Estilo para o formulário de pesquisa */
+.search-form {
+    margin: 20px auto; /* centralizar o formulário */
+    text-align: flex-start; /* centralizar os elementos dentro do formulário */
+    margin-left: 150px;
+}
+
+@media screen and (max-width: 859px) {
+    .search-bar {
+        position: static;
+        align-items: flex-end;
+        justify-content: flex-end;
+        left: 0;
+        margin-left: -17vw;
+        width: 50vw;
+    }
+
+    h1{
+        display: none;
+    }
+    .search-btn {
+        position: static;
+        align-items: flex-end;
+        justify-content: flex-end;
+        left: 0;
+        margin-left: 0vw;
+    }
+
+    .filtro-label {
+        position: fixed; /* Tornar a label fixa */
+        top: 125px; /* Definir a distância do topo */
+        left: 10px; /* Definir a distância da esquerda */
+        z-index: 999; /* Certificar-se de que a label esteja acima de outros elementos */
+        color: #999;
+        font-size: 14px;
+        font-style: italic;
+        pointer-events: none;
+    }
+    
+
+    .filtro{
+        position: fixed; /* Tornar a label fixa */
+        top: 140px; /* Definir a distância do topo */
+        left: 10px; /* Definir a distância da esquerda */
+        z-index: 999; /* Certificar-se de que a label esteja acima de outros elementos */
+    }
+        .floating-page {
+            /* Ajuste a posição conforme necessário */
+            top: 50%; /* Coloca o elemento no meio vertical */
+            left: 50%; /* Coloca o elemento no meio horizontal */
+            transform: translate(-300%, -50%); /* Centraliza o elemento */
+            position: fixed; /* Mude para 'fixed' para que o 'top' e 'left' funcionem corretamente */
+            display: flex;
+            /* Outras propriedades */
+            height: 200vh;
+            width: 200px;
+        }
+}
+
+.filtro {
+    border:none;
+    background: rgba(240, 240, 240, 0.75);
+    box-sizing: border-box; /* Garantir que a largura e altura incluam a sombra */
+    border-radius: 10px;
+    box-shadow: 0 0 1px black;
+    cursor: pointer;
+}
+
+.filtro-label {
+    position: absolute;
+    color: #999;
+    font-size: 14px;
+    font-style: italic;
+    margin-top: 12px;
+    margin-left: 5px;
+    pointer-events: none;
+}
+
+.floating-page {
+    height: 80px;
+    width: 140px;
+    top: 160px;
+    left: 570px;
+    position: absolute;
+    background: rgba(240, 240, 240, 0.75);
+    box-sizing: border-box; /* Garantir que a largura e altura incluam a sombra */
+    border-radius: 20px;
+    box-shadow: 0 0 1px black; 
+    border: none;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(2px);
+}
+
+.floating-page ul {
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.floating-page li {
+    margin-left: 20px;
+    margin-top: 1px;
+}
+
+.floating-page li:hover {
+    color: rgb(206,0,86);
+}
+
+.btn-reserva {
+    position: absolute;
+    right: 10%;
+    top: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-adicionar {
+    padding: 10px 15px;
+    background-color: rgb(206, 0, 86);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Adicione estilos específicos para telas menores */
+/* Adicione estilos específicos para telas menores */
+@media screen and (max-width: 859px) {
+    .btn-reserva {
+        position: static;
+        align-items: flex-end;
+        justify-content: flex-end;
+        margin-right: 10vw;
+    }
+}
+
+/* Hover */
+.btn-adicionar:hover {
+    background-color: rgb(159, 0, 66);
+}
+
+.box-salas {
+    margin: 20px auto; /* Margem superior e inferior de 50px e centraliza horizontalmente */
+    display: flex; /* Torna o container flexível */
+    flex-direction: column; /* Coloca os itens em uma coluna */
+    justify-content: flex-start; /* Alinha os itens ao topo */
+    align-items: flex-start; /* Alinha os itens horizontalmente ao centro */
+    background: rgba(240, 240, 240, 0.75);
+    box-sizing: border-box; /* Garantir que a largura e altura incluam a sombra */
+    border-radius: 20px;
+    box-shadow: 0 0 1px black; 
+    height: 73.5vh; /* Define a altura para ocupar toda a altura da tela */
+    width: 80vw;
+}
+
+.id {
+    display: flex;
+    flex-direction: column;
+}
+
+.id input {
+    margin-bottom: 100px; /* Espaçamento entre os inputs */
+    margin-left: 20px;
+    width: 70px;
+    margin-top: 90px;
+    border: none;
+    box-shadow: 0 0 1px black;
+    border-radius: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+
+th, td {
+    border: none;
+    text-align: center;
+    padding: 8px;
+    border-left: 0.5px solid black; /* Adiciona uma borda inferior mais grossa para o cabeçalho */
+    border-bottom: 0.5px solid black; /* Adiciona uma borda inferior mais grossa para o cabeçalho */
+}
+
+tr:last-child td.id {
+    border-bottom-left-radius: 20px; /* Define o raio inferior esquerdo apenas para a última linha */
+}
+
+th {
+    background-color: #cccccc;
+    border-bottom: 2px solid black; /* Adiciona uma borda inferior mais grossa para o cabeçalho */
+}
+
+.id{
+    align-items: center;
+    justify-content: center;
+    width: 15vw;
+    height: 70px;
+
+}
+
+.sala {
+    width: 60vw;
+    height: 70px;; /* Defina a altura desejada para a sala */
+    cursor: pointer;
+}
+
+footer{
+    width: 100%;
+    height: 100px;
+    background-color: #292929;
+}
+
+footer p{
+    color: #fff;
+    text-align: flex-start;
+    justify-content: center;
+    font-family: Inter;
+    margin-top: 50px;
+    margin-left: 100px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    white-space: nowrap;
+}

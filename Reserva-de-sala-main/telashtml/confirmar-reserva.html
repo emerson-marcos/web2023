@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="confirmar-reserva.css">
+    <link rel="icon" href="assets/Afya icon logo.png">
+<script src="confirmar-reserva.js"></script>
+    <title>Confirme sua reserva</title>
+</head>
+<body>
+    <div class="container">
+        <!-- logo de trás -->
+        <div class="mulher">
+            <img src="assets/afya_mulher.png" alt="img">
+        </div>
+
+        <header>
+            <a href="https://www.afya.com.br/"><img src="assets/logo afya cor rosa.png" id="logo"></a>
+               
+            <!-- cabeçalho -->
+            <nav id="menu">
+                <a href="index.html">Início</a>
+                <a href="#">Salas</a>
+                <a href="#">Cursos</a>
+            </nav>
+        </header>
+
+        <div class="cadastro">
+            <h1>Confirme sua reserva</h1>
+            <span class="data">Qual a data de sua reserva ? <input type="date"></span>
+            
+            <span class="hora1">Qual o horario de inicio e final ?  <input type="time"> as <input type="time"></span>
+            
+            <span class="descricao">Precisará de equipamentos ? (datashow, etc...) <select class="select" name="select"><option value=""></option><option value="sim">Sim</option><option value="nao">Não</option></select>
+            <br><br>
+            <span class="participantes">Digite o numero de participantes que irão? <input type="text" id="numero" pattern="[0-9]*" maxlength="2"></span>
+
+            <button id="submit" class="submit">Confirmar</button>
+        </div>
+
+        <div class="floating-page" id="floatingPage">
+            <span class="icon-close" onclick="fecharInputBox()"><ion-icon name="close-outline"></ion-icon></span>
+            <span class="sucesso">Seu cadastro foi realizado com sucesso</span>
+            <ion-icon class="check" name="checkmark-outline"></ion-icon>
+        </div>
+
+    </div>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <footer><p>Todos os direitos reservados. Copyright 2024/ Afya</p></footer>
+</body>
+</html>

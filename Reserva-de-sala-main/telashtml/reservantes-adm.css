@@ -1,0 +1,246 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    letter-spacing: 1px;
+    font-family: "Sansbeambody Bold", sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+body {
+	display: flex;
+	flex-wrap: wrap;
+    overflow-x: hidden;
+	/* Junção de flex-grow, flex-shrink e flex-basis.  */
+	/* flex-grow – Habilidade de um flex item crescer. */
+	/* flex-shrink - Capacidade de redução do item.    */
+	/* flex-basis – Tamanho inicial do item.           */
+	flex: 1 1 100vw;
+}
+
+.container {
+    position: relative;
+    flex: 1 1 100vw;
+    height: 100vh;
+}
+
+#logo{
+    flex: 1 0 200;
+    align-items: flex-start;
+    justify-content: flex-start;
+    top: 0;
+    left: 0;
+}
+
+.mulher {
+    position: absolute;
+    top: 0px;
+    left: 406px;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.2; /* Opacidade da imagem */
+    z-index: -1; /* Garante que a imagem fique atrás do conteúdo */
+}
+
+header {
+    display: flex;
+	flex: 1 1 100vw;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(2px);
+}
+
+header #logo {
+	display: flex;
+    width: 80px;
+    height: 32px;
+    flex: 0 1 100px;
+    margin-top: 15px;
+    margin-left: 120px; /* Adicione margem à esquerda */
+    margin-right: 10px; /* Adicione margem à direita */
+    align-self: center; /* Alinhe verticalmente ao centro */
+    font-size: 16px;
+    
+}
+
+@media screen and (max-width: 859px) {
+    header #logo {
+        display: none;
+    }
+}
+
+.reservantes-header{
+    color: rgb(206,0,86);
+    font-weight: 800;
+    font-family: Inter;
+    word-spacing: 2px;
+}
+
+nav {
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1 1 200px;
+}
+
+nav a {
+	margin: 0 3%;
+	font-size: 13pt;
+    font-weight: 500;
+}
+
+h1{
+    margin-top: 20px;
+    margin-left: 150px;
+    color: #292929;
+    text-align: flex-start;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+/* Estilo básico para a barra de pesquisa */
+.search-bar {
+    width: 300px; /* largura da barra de pesquisa */
+    padding: 10px; /* espaço interno */
+    border: 1px solid #ccc; /* borda */
+    border-radius: 20px; /* bordas arredondadas */
+    font-size: 16px; /* tamanho da fonte */
+    left: 0;
+}
+
+/* Estilizando o botão de pesquisa */
+.search-btn {
+    padding: 10px 15px; /* espaço interno */
+    background-color: rgb(206,0,86); /* cor de fundo */
+    color: #fff; /* cor do texto */
+    border: none; /* removendo a borda */
+    border-radius: 20px; /* bordas arredondadas */
+    cursor: pointer; /* cursor ao passar por cima */
+    font-size: 16px; /* tamanho da fonte */
+}
+
+/* Estilizando o botão de pesquisa quando passa o mouse por cima */
+.search-btn:hover {
+    background-color: rgb(159, 0, 66); /* cor de fundo ao passar o mouse */
+}
+
+/* Estilo para o formulário de pesquisa */
+.search-form {
+    margin: 20px auto; /* centralizar o formulário */
+    text-align: center; /* centralizar os elementos dentro do formulário */
+}
+
+@media screen and (max-width: 859px) {
+    .search-bar {
+        position: static;
+        align-items: flex-end;
+        justify-content: flex-end;
+        left: 0;
+        margin-left: -17vw;
+        width: 50vw;
+    }
+
+    h1{
+        display: none;
+    }
+    .search-btn {
+        position: static;
+        align-items: flex-end;
+        justify-content: flex-end;
+        left: 0;
+        margin-left: 0vw;
+    }
+}
+
+.box-salas {
+    margin: 20px auto; /* Margem superior e inferior de 50px e centraliza horizontalmente */
+    display: flex; /* Torna o container flexível */
+    flex-direction: column; /* Coloca os itens em uma coluna */
+    justify-content: center; /* Alinha os itens ao topo */
+    align-items: center; /* Alinha os itens horizontalmente ao centro */
+    background: rgba(240, 240, 240, 0.75);
+    box-sizing: border-box; /* Garantir que a largura e altura incluam a sombra */
+    border-radius: 20px;
+    box-shadow: 0 0 1px black; 
+    height: 73.5vh; /* Define a altura para ocupar toda a altura da tela */
+    width: 50vw;
+}
+
+@media screen and (max-width: 859px) {
+    .box-salas {
+        position: static;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+        width: 80%;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+th, td {
+    border: none;
+    text-align: center;
+    padding: 8px;
+    border-left: 0.5px solid black; /* Adiciona uma borda inferior mais grossa para o cabeçalho */
+    border-bottom: 0.5px solid black; /* Adiciona uma borda inferior mais grossa para o cabeçalho */
+}
+
+tr:last-child td.id {
+    border-bottom-left-radius: 20px; /* Define o raio inferior esquerdo apenas para a última linha */
+}
+
+th {
+    background-color: #cccccc;
+    border-bottom: 2px solid black; /* Adiciona uma borda inferior mais grossa para o cabeçalho */
+}
+
+.id{
+    align-items: center;
+    justify-content: center;
+    width: 10vw;
+
+}
+
+.responsavel {
+    width: 20vw;
+    height: 10vh; /* Defina a altura desejada para a sala */
+    cursor: pointer;
+}
+
+.edit{
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+footer{
+    width: 100%;
+    height: 100px;
+    background-color: #292929;
+}
+
+footer p{
+    color: #fff;
+    text-align: flex-start;
+    justify-content: center;
+    font-family: Inter;
+    margin-top: 50px;
+    margin-left: 100px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    white-space: nowrap;
+}

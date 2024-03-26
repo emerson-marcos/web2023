@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="assets/Afya icon logo.png">
+    <link rel="stylesheet" href="reservas-adm.css">
+    <script src="salas.js"></script>
+
+    <title>Salas</title>
+</head>
+<body>
+    <div class="container">
+
+
+       
+        <!-- logo de trás -->
+        <div class="mulher">
+
+
+            <img src="assets/afya_mulher.png" alt="img">
+
+
+        </div>
+
+
+        <header>
+            <!-- botei o link aqui para criar um redirecionamento ao portal inicial da Afya -->
+
+
+            <a href="https://www.afya.com.br/"><img src="assets/logo afya cor rosa.png" id="logo"></a>
+               
+            <!-- cabeçalho -->
+            <nav id="menu">
+       
+                    <a href="index.html">Início</a>
+                    <a href="#"><span class="sala-header">Salas</span></a>
+                    <a href="reservantes-adm.html">Reservantes</a>
+                    <a href="#">Cursos</a>
+                    
+                </nav>        
+            </header>
+
+        <h1>Salas</h1>
+
+        <!-- barra de pesquisa -->
+        <form class="search-form">
+            <input type="text" name="q" placeholder="Digite sua pesquisa..." class="search-bar">
+            <button type="submit" class="search-btn">Pesquisar</button>
+
+            <span class="filtro-label">Filtrar por:</span>
+            <input type="text" class="filtro" disabled>
+        
+            <!-- janela flutuante para filtrar por -->
+            <div class="floating-page" id="floatingPage">
+                <ul id="lista">
+                    <li>Sala</li>
+                    <li>Id</li>
+                    <li>Disponíveis</li>
+                    <li>Indisponíveis</li>
+                </ul>
+            </div>
+
+            <div class="btn-reserva"
+                ><!-- Adicione o evento de clique diretamente no botão "Adicionar Sala" -->
+                <button class="btn-adicionar" id="btnAdicionarSala"onclick="abrirInputBox(event)">Adicionar Sala</button>
+                
+            </div>
+
+        </form>
+
+             <!-- table salas -->
+    <div class="box-salas">
+        <table>
+            <thead>
+                <tr>
+                    <th>Vagas</th>
+                    <th>Sala</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="vagas">50</td>
+                    <td class="sala">Laboratório C</td>
+                    <td>Reservada</td>
+                </tr>
+                <tr>
+                    <td class="vagas">99</td>
+                    <td class="sala">Auditorio 1F</td>
+                    <td class="status">Indisponível</td>
+                </tr>
+                <tr>
+                    <td class="vagas">30</td>
+                    <td class="sala">Sala 303</td>
+                    <td>Disponível</td>
+                </tr>
+                <tr>
+                    <td class="vagas">30</td>
+                    <td class="sala">Sala 101</td>
+                    <td class="status">Reservada</td>
+                </tr>
+
+                <tr>
+                    <td class="vagas"></td>
+                    <td class="sala"></td>
+                    <td class="status"></td>
+                </tr>
+                <tr>
+                    <td class="vagas"></td>
+                    <td class="sala"></td>
+                    <td class="status"></td>
+                </tr>
+                <tr>
+                    <td class="vagas"></td>
+                    <td class="sala"></td>
+                    <td class="status"></td>
+                </tr>
+                <!-- Adicione mais linhas conforme necessário -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="input-box" id="inputBox">
+        <span class="icon-close" onclick="fecharInputBox()"><ion-icon name="close-outline"></ion-icon></span>
+        <br>
+
+        <div class="container2">
+            <h1>Cadastrar uma sala</h1>
+        
+            <span class="escolha">O que quer adicionar?</span>
+            <select name="sala" id="sala">
+                <option value="lab" class="option-lab" onclick="exibirLabOptions()">Laboratório</option>
+                <option value="salas" class="option-salas">Sala</option>
+                <option value="auditorio" class="option-auditorio">Auditório</option>
+            </select>
+
+            <input class="nome-sala" type="text" placeholder="Digite o nome da sala">
+            <input class="num-sala" type="number" placeholder="Vagas">
+            <button class="btn-cadastrar" id="cadastrar-sala">Cadastrar sala</button>
+        </div>
+        <br>
+</div>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<footer><p>Todos os direitos reservados. Copyright 2024/ Afya</p></footer>
+</body>
+</html>

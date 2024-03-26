@@ -1,0 +1,223 @@
+/* Propriedades que se aplicam a todos os elementos da página. */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    letter-spacing: 1px;
+    font-family: "Sansbeambody Bold", sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+body {
+	display: flex;
+	flex-wrap: wrap;
+    overflow-x: hidden;
+	/* Junção de flex-grow, flex-shrink e flex-basis.  */
+	/* flex-grow – Habilidade de um flex item crescer. */
+	/* flex-shrink - Capacidade de redução do item.    */
+	/* flex-basis – Tamanho inicial do item.           */
+	flex: 1 1 100vw;
+}
+
+
+.container {
+    position: relative;
+    flex: 1 1 100vw;
+    height: 100vh;
+}
+
+.mulher {
+    position: absolute;
+    top: 0px;
+    left: 406px;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.2; /* Opacidade da imagem */
+    z-index: -1; /* Garante que a imagem fique atrás do conteúdo */
+}
+
+header {
+    display: flex;
+	flex: 1 1 100vw;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(2px);
+}
+
+header #logo {
+	display: flex;
+	align-items: center;
+    width: 80px;
+    height: 32px;
+    flex: 0 1 100px;
+    margin-top: 15px;
+    margin-left: 120px; /* Adicione margem à esquerda */
+    margin-right: 10px; /* Adicione margem à direita */
+    align-self: center; /* Alinhe verticalmente ao centro */
+    font-size: 16px;
+    vertical-align: middle;
+    
+}
+
+nav {
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1 1 200px;
+}
+
+nav a {
+	margin: 0 3%;
+	font-size: 13pt;
+    font-weight: 500;
+}
+
+.input-box-container {
+    display: flex;
+    justify-content: center; /* Alinha os elementos no centro horizontal */
+    margin-top: 25vh; /* Ajuste conforme necessário */
+    gap: 64px;
+}
+
+.input-box{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aluno{
+    background-color:rgba(255, 255, 255, 0.9);
+    width: 200px;
+    height: 300px;
+    border-radius: 20px;
+    box-shadow: 0 0 1px black; 
+    border: none;
+    background-image: url(assets/estudante.png);
+    background-position: 50%;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.aluno p{
+    align-self: stretch;
+    color: #292929;
+    text-align: center;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.funcionario{
+    background-color:rgba(255, 255, 255, 0.9);
+    width: 200px;
+    height: 300px;
+    border-radius: 20px;
+    box-shadow: 0 0 1px black; 
+    border: none;
+    background-image: url(assets/Professor.png);
+    background-size: cover;
+    background-position: 50%;
+    cursor: pointer;
+}
+
+.funcionario p{
+    align-self: stretch;
+    color: #292929;
+    text-align: center;
+    justify-content: center;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.admin{
+    background-color:rgba(255, 255, 255, 0.9);
+    width: 200px;
+    height: 300px;
+    border-radius: 20px;
+    box-shadow: 0 0 1px black; 
+    border: none;
+    background-image: url(assets/administrador-img.png);
+    background-position: 50%;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.admin p{
+    align-self: stretch;
+    color: #292929;
+    text-align: center;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.aluno,
+.funcionario,
+.admin {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 200px;
+    height: 300px;
+    border-radius: 20px;
+    box-shadow: 0 0 1px black;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.5s; /* Define a transição para a propriedade transform */
+}
+
+.aluno:hover,
+.funcionario:hover,
+.admin:hover {
+    transform: translateY(-10px); /* Move o elemento para frente */
+}
+
+.aluno p,
+.funcionario p, .admin p {
+    align-self: stretch;
+    color: #292929;
+    text-align: center;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    position: absolute;
+    bottom: 20px; /* Ajuste conforme necessário */
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: calc(100% - 0px); /* Posiciona o elemento a partir do topo do pai */
+}
+
+
+footer{
+    width: 100%;
+    height: 100px;
+    background-color: #292929;
+}
+
+footer p{
+    color: #fff;
+    text-align: flex-start;
+    justify-content: center;
+    font-family: Inter;
+    margin-top: 50px;
+    margin-left: 100px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    white-space: nowrap;
+}

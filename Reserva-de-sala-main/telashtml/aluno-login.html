@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+	<link rel="stylesheet" type="text/css" href="aluno-login.css">
+  <link rel="icon" href="assets/Afya icon logo.png">
+
+
+	<title>Página de reserva</title>
+</head>
+
+
+
+<body>
+	<header>
+    <!-- botei o link aqui para criar um redirecionamento ao portal inicial da Afya -->
+    <a href="https://www.afya.com.br/"><img src="assets/logo afya cor rosa.png" id="logo"></a>
+
+		
+		<button id="openMenu">&#9776;</button>
+		
+    <nav id="menu">
+			<button id="closeMenu">X</button>
+
+			<a href="index.html">Início</a>
+			<a href="#">Cursos</a>
+      
+		</nav>
+
+	</header>
+	<main>
+          <div class="form-box">
+
+              <h1>Faça sua reserva</h1>
+              <h5>Informe seus dados para continuar</h5>
+<br><br>
+                <form action="#">
+                  
+                    <div class="input-box">
+                      <span class="matricula">Matricula</span>
+                        <input type="number"placeholder="Digite sua matricula" required>
+                      </div>
+
+                      <div class="input-box">
+                        <span class="cpf">CPF</span>
+                          <input type="number"placeholder="Digite seu CPF" required>
+                        </div>
+
+                    <div class="input-box">
+                      <span class="email">Email</span>
+                        <input class="" type="email" placeholder="Digite seu email" required>
+                        
+
+                    </div>
+
+                    <div class="input-box">
+                      <span class="telefone">Telefone</span>
+                      <input type="tel" id="telefone" name="telefone" maxlength="11" placeholder="Digite seu telefone" required onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                  
+                    </div>
+                    <button type="submit" class="btn"><a href="salas-usuario.html">Reservar</a></button>
+                    <div class="registrar-login"></div>
+                </form>
+          </div>
+
+</main>
+
+<footer><p>Todos os direitos reservados. Copyright 2024/ Afya</p></footer>
+
+  <script type="text/javascript" src="script.js"></script>
+</body>

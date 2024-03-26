@@ -36,73 +36,34 @@
             <input type="text" name="q" placeholder="Buscar..." class="search-bar">
             <button type="submit" class="search-btn">Pesquisar</button>
 
-             <!-- table salas -->
-    <div class="box-salas">
-        <table>
-            <thead>
-                <tr>
-                    <th>Vagas</th>
-                    <th>Responsável</th>
-                    <th>Sala</th>
-                    <th>Status</th>
-                    <th>Editar</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="vagas">30</td>
-                    <td class="responsavel">Thiago Fragata</td>
-                    <td>Sala 101</td>
-                    <td>Reservada</td>
-                    <td><ion-icon class="edit" name="pencil-outline"></ion-icon><ion-icon class="edit" name="trash-outline"></ion-icon></td>
-                </tr>
-                <tr>
-                    <td class="vagas">50</td>
-                    <td class="responsavel">Breno Uchoa</td>
-                    <td>Laboratório C</td>
-                    <td>Reservada</td>
-                    <td><ion-icon class="edit" name="pencil-outline"></ion-icon><ion-icon class="edit" name="trash-outline"></ion-icon></td>
-                </tr>
-                <tr>
-                    <td class="vagas"></td>
-                    <td class="responsavel"></td>
-                    <td></td>
-                    <td></td>
-                    <td><ion-icon class="edit" name="pencil-outline"></ion-icon><ion-icon class="edit" name="trash-outline"></ion-icon></td>
-                </tr>
-                <tr>
-                    <td class="vagas"></td>
-                    <td class="responsavel"></td>
-                    <td></td>
-                    <td></td>
-                    <td><ion-icon class="edit" name="pencil-outline"></ion-icon><ion-icon class="edit" name="trash-outline"></ion-icon></td>
-                </tr>
-                <tr>
-                    <td class="vagas"></td>
-                    <td class="responsavel"></td>
-                    <td></td>
-                    <td></td>
-                    <td><ion-icon class="edit" name="pencil-outline"></ion-icon><ion-icon class="edit" name="trash-outline"></ion-icon></td>
-                </tr>
-                <tr>
-                    <td class="vagas"></td>
-                    <td class="responsavel"></td>
-                    <td></td>
-                    <td></td>
-                    <td><ion-icon class="edit" name="pencil-outline"></ion-icon><ion-icon class="edit" name="trash-outline"></ion-icon></td>
-                </tr>
-                <tr>
-                    <td class="vagas"></td>
-                    <td class="responsavel"></td>
-                    <td></td>
-                    <td></td>
-                    <td><ion-icon class="edit" name="pencil-outline"></ion-icon><ion-icon class="edit" name="trash-outline"></ion-icon></td>
-                </tr>
-                
-                <!-- Adicione mais linhas conforme necessário -->
-            </tbody>
-        </table>
-    </div>
+             <div class="box-salas">
+    <table>
+        <thead>
+            <tr>
+                <th>Vagas</th>
+                <th>Responsável</th>
+                <th>Sala</th>
+                <th>Status</th>
+                <th>Editar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each reservas}}
+            <tr>
+                <td class="vagas">{{this.vagas}}</td>
+                <td class="responsavel">{{this.responsavel}}</td>
+                <td>{{this.sala}}</td>
+                <td>{{this.status}}</td>
+                <td>
+                    <ion-icon class="edit" name="pencil-outline"></ion-icon>
+                    <ion-icon class="edit" name="trash-outline"></ion-icon>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
     </div>
     <footer><p>Todos os direitos reservados. Copyright 2024/ Afya</p></footer>
 

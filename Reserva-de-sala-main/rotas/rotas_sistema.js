@@ -63,7 +63,15 @@ router.post('/cadastrar-sala', (req, res) => {
 
 
 router.get('/reservantesAdm', function(req,res) {
-  servico.reservantesAdm(req,res);
+    
+  conexao.query('SELECT * FROM reservas', (error, results) => {
+    if (error) {
+        console.error('Erro ao buscar as reservas:', error);
+        res.status(500).send('Erro ao buscar as reservas');
+    } else {
+        res.render('reservantesAdm', { layout: 'reservantes', reservas: results });
+    }
+});
 });
 
 router.get('/reservasAdm', function(req, res) {
@@ -74,16 +82,9 @@ router.get('/reservasAdm', function(req, res) {
             console.error('Erro ao buscar as salas:', error);
             res.status(500).send('Erro ao buscar as salas');
         } else {
-            // Renderize a página HTML e passe as salas como variável para o template
             res.render('reservasAdm', { layout: 'reservas', salas: results });
         }
     });
-});
-
-
-  //rota de login do gerente de TI (mova esta rota para cima)
-router.get('/login', function(req,res) {
-    servico.paginaLoginGerente(req,res);
 });
 
 //rota principal

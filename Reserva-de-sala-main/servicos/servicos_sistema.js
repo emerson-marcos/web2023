@@ -8,7 +8,7 @@ const crypto = require('crypto');
 
 // Função para exibir o formulário para cadastro de produtos
 function paginaPrincipal(req, res){
-    res.render('index');
+    res.render('layouts/main');
 }
 
 // Exportar funções

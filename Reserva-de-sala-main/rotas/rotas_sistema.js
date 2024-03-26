@@ -18,5 +18,10 @@ router.get('/', function(req, res){
     servico.paginaPrincipal(req, res);
 });
 
+//rota principal
+router.get('/adminLogin', function(req, res){
+    servico.adminLogin(req, res);
+});
+
 // Exportar o router
 module.exports = router;

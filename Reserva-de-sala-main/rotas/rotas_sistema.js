@@ -64,17 +64,18 @@ router.post('/cadastrar-sala', (req, res) => {
 
 router.get('/reservantesAdm', function(req,res) {
     
-  conexao.query('SELECT * FROM reservas', (error, results) => {
-    if (error) {
-        console.error('Erro ao buscar as reservas:', error);
-        res.status(500).send('Erro ao buscar as reservas');
-    } else {
-        res.render('reservantesAdm', { layout: 'reservantes', reservas: results });
-    }
-});
+    conexao.query('SELECT * FROM reserva', (error, results) => {
+        if (error) {
+            console.error('Erro ao buscar as reservas:', error);
+            res.status(500).send('Erro ao buscar as reservas');
+        } else {
+            res.render('reservantesAdm', { layout: 'reservantes', reservas: results });
+        }
+    });
 });
 
 router.get('/reservasAdm', function(req, res) {
+
     conexao.query('SELECT * FROM sala', (error, results) => {
         console.log('Consulta ao banco de dados realizada com sucesso:', results);
 
@@ -86,6 +87,22 @@ router.get('/reservasAdm', function(req, res) {
         }
     });
 });
+
+/*******************Rotas Para Reservantes Start**********************/
+
+router.get('/aluno-login', function(req, res) {
+    try {
+        // Renderiza o arquivo aluno-login.handlebars dentro da pasta reservante
+        res.render('reservante/aluno-login', {layout: 'aluno-login'});
+    } catch (error) {
+        // Tratamento de erro, se necessário
+        console.error(error);
+        res.status(500).send("Desculpe, ocorreu um erro. Por favor, tente novamente mais tarde.");
+    }
+});
+
+
+/*******************Rotas Para Reservantes End**********************/
 
 //rota principal
 router.get('/', function(req, res){
